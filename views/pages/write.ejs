@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Write</title>
+    <%- include("../partials/links.ejs") %>
+</head>
+<body>
+
+    <%- include("../partials/header.ejs", { id: id }) %>
+
+    <div id="screen" class="write">
+        <form action="/create-post" method="POST" id="form-write">
+            <div id="write-flex">
+                <input type="hidden" name="userId" value="<%= locals.id %>">
+                <% if (locals.isEditing === true) { %>
+                    <input type="hidden" name="oldTopic" value="<%= locals.oldTopic %>">
+                <% } %>
+                <input type="text" name="topic" placeholder="Tópico" value="<%= locals.topic %>" id="write-topic">
+                <textarea name="text" placeholder="Escreva seu texto aqui" id="write-text"><%= locals.text %></textarea>
+                <input type="submit" value="Postar" class="btn">
+            </div>
+        </form>
+        
+        <% if (!locals.topic && firstTry === false) { %>
+            <p>- Você não escreveu o tópico.</p>
+        <% } %>
+            
+        <% if (!locals.text && firstTry === false) { %>
+            <p>- Você não escreveu nada no texto.</p>
+        <% } %>
+            
+        <% if (locals.isEditing === true) { %>
+            <form action="/delete-post" method="POST">
+                <div>
+                    <input type="hidden" name="userId" value="<%= locals.id %>">
+                    <input type="hidden" name="oldTopic" value="<%= locals.oldTopic %>">
+                    <input type="submit" value="Excluir" class="btn" id="btn-delete">
+                </div>
+            </form>
+        <% } %>
+    </div>
+
+        </body>
+        </html>

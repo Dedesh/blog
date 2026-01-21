@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+button, input {
+    font-family: "Roboto", sans-serif;
+}
+
+#footer-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn-footer {
+    position: fixed;
+    bottom: 2%;
+}
+
+#btn-footer {
+    text-decoration: none;
+    background-color: rgb(13, 164, 175);
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 10px;
+    color: white;
+}
+
+#btn-delete {
+    margin-top: 1rem;
+    margin-left: 48vw;
+}
+
+p {
+    margin: 0;
+    color: white;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(13, 164, 175);
+}
+
+header > h1 {
+    color: white;
+    font-size: 3rem;
+    margin: 0 0 0 3rem;
+    padding: 1rem;
+}
+
+#screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login, .write {
+    flex-flow: column nowrap;
+    background-color: rgb(13, 164, 175);
+}
+
+#posts-flex {
+    width: 50%;
+    height: 75%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.post-container {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(13, 164, 175);
+    border-radius: 1rem;
+}
+
+.author {
+    font-size: 1rem;
+    color: black;
+}
+
+.post-topic, .post-text {
+    padding: 0 5rem;
+    color: white;
+}
+
+.post-text {
+    font-weight: 400;
+    white-space: pre-wrap;
+}
+
+.post-topic, #write-topic {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.post-text, #write-text {
+    font-size: 1rem;
+}
+
+.btn {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(13, 164, 175);
+    border: 0;
+    cursor: pointer;
+}
+
+#write-flex > .btn {
+    width: fit-content;
+}
+
+#login-flex {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#write-flex {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#id-input, #write-topic, #write-text {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#id-input {
+    width: 11vw;
+}
+
+form::placeholder, textarea::placeholder {
+    color: rgb(134, 134, 134);
+}
+
+textarea {
+    font-family: "Roboto", sans-serif;
+}
+
+.write > #form-write {
+    width: 50%;
+}
+
+#write-topic, #write-text {
+ width: 100%;
+}
+
+#write-text {
+    height: 20vh;
+}
+
+.bottom-space {
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(255, 255, 255);
+}
+
+@media(max-width: 700px) {
+
+    .btn {
+        font-size: 1rem;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .post-container .btn {
+        margin: 0 0 -5px -5px;
+    }
+
+    #id-input {
+    width: 50vw;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    header > h1 {
+        font-size: 2rem;
+        margin: 0 0 0 1.5rem;
+        padding: 0.5rem;
+    }
+
+    #posts-flex {
+        width: 85%;
+        gap: 1rem;
+    }
+
+    .post-topic, .post-text {
+        padding: 0 3rem;
+    }
+
+    .post-topic, #write-topic {
+        font-size: 1.5rem;
+    }
+
+    .write > #form-write {
+        width: 85%;
+    }
+
+    #write-text {
+        height: 30vh;
+    }
+
+    #btn-delete {
+        margin-left: 78vw;
+    }
+
+}

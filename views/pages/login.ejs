@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Login</title>
+    <%- include("../partials/links.ejs") %>
+</head>
+<body>
+    <div id="screen" class="login">
+        <form action="/submit-id" method="POST">
+            <div id="login-flex">
+                <input type="text" placeholder="Escreva seu ID" name="id" id="id-input">
+                <input type="submit" value="Entrar" class="btn">
+            </div>
+        </form>
+        <p>- ID deve possuir pelo menos 4 caracteres.</p>
+    </div>
+</body>
+</html>

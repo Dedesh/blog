@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Home</title>
+    <%- include("../partials/links.ejs") %>
+</head>
+<body>
+
+    <%- include("../partials/header.ejs", { id: id }) %>
+
+    <div id="screen">
+        <div id="posts-flex">
+            <% let i=0 %>
+            <% for (let topic in blogPosts) { %>
+                <div class="post-container" style="background-color: <%= colors[i] %>;">
+                    <% i++ %>
+                    <p class="author"><em><%= blogPosts[topic][1] %></em></p>
+                    <h2 class="post-topic"><%= topic %></h2>
+                    <h3 class="post-text"><%= blogPosts[topic][0] %></h3>
+                    <% if (id === blogPosts[topic][1]) { %>
+                        <form action="/edit-post" method="POST">
+                            <input type="hidden" name="oldTopic" value="<%= topic %>">
+                            <input type="submit" value="Edit" class="btn">
+                        </form>
+                    <% } %>
+                </div>
+            <% } %>
+            <div class="bottom-space">
+                <div class="bottom-space"></div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../partials/footer.ejs", { id: id }) %>
+
+</body>
+</html>
