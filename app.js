@@ -2,14 +2,14 @@ import express from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-app.listen(3000, () => {
-    console.log(`Server listening on port ${port}.`)
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}.`)
 });
 
 const blogPosts = {}
